@@ -468,14 +468,124 @@ namespace Demo {
 }
 ```
 
+https://www.tutorialspoint.com/What-is-the-difference-between-break-and-continue-statements-in-Chash
+
 ##    Q: What is this and how is it used?
+
+**Main Purpose**
+
+The `this` keyword refers to the current instance of the class and is also used as a modifier of the first parameter of an extension method.
+
+Basically, you can use it to access private instances of classes and use them with public objects.
+
+**Syntax Ex:**
+```
+class Employee
+{
+    private string name;
+    private string alias;
+    private decimal salary = 3000.00m;
+
+    // Constructor:
+    public Employee(string name, string alias)
+    {
+        // Use this to qualify the fields, name and alias:
+        this.name = name;
+        this.alias = alias;
+    }
+
+    // Printing method:
+    public void printEmployee()
+    {
+        Console.WriteLine("Name: {0}\nAlias: {1}", name, alias);
+        // Passing the object to the CalcTax method by using this:
+        Console.WriteLine("Taxes: {0:C}", Tax.CalcTax(this));
+    }
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/this
+
 ##    Q: What is try and catch and when are they used?
+
+The try-catch statement consists of a `try` block followed by one or more `catch` clauses, which specify handlers for different exceptions.
+
+The `try` block contains the guarded code that may cause an exception.
+```
+object o2 = null;
+try
+{
+    int i2 = (int)o2;   // Error
+}
+```
+If the `try` block causes an exception then the program will move to the appropriate `catch` block. For example if you are trying to cast a null object you will raise the NullReferenceException. In this case you could have a `catch` block similar to the following:
+```
+catch (InvalidCastException e)
+{
+}
+```
+
+This will allow you to have custom error messages based on the error the program recieves.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/try-catch
+
 ##    Q: How is exception handling done?
+
+Exception handling is done by using `try-catch` statements or `try-catch-finally` statements.
+
+For more information on `try-catch` statements look at the previous question.
+
+In a `try-catch-finally` statement the only difference is that the `finally` block will be ran no matter what exception is thrown in the `try` block.
+
 ##    Q: What is finally and what is its purpose?
+
+As mentioned above, `finally` is an optional ending to a `try-catch` statement. 
+
+The `finally` block is the section of code that is ran nomatter what exceptions are thrown in the `try` block.
+
 ##    Q: List the differences between Array and ArrayList.
-##    Q: What is an object?
+
+**Array**
+
+* Strongly typed. An array can only store one specific type of elements.
+* Upon initialization an arrays size is fixed.
+* Items of an Array dont need to be cast when retrieving them because Arrays are strongly typed.
+
+**ArrayList**
+
+* Can store any type of elements.
+* grows automatically, and you do not need to specify size.
+* Items of an ArrayList must be cast to appropriate data types while retrieving. 
+
+https://www.tutorialsteacher.com/articles/difference-between-array-and-arraylist-in-csharp
+
 ##    Q: Define constructor.
+
+When a class or struct is created, its constructor is called. 
+
+It is used to assign initial values to the data members of the same class.
+
+**Syntax Ex:**
+```
+class Geek
+{   
+  .......
+  // Constructor
+  public Geek() {}
+  .......
+}
+
+// an object is created of Geek class,
+// So above constructor is called
+Geek obj = new Geek(); 
+```
+
+https://www.geeksforgeeks.org/c-sharp-constructors/
+
 ##    Q: When can var be used to declare a variable and how is the type for the variable determined?
+
+
+
+
 ##    Q: What is an abstract class?
 ##    Q: What is an interface?
 ##    Q: What is a method?
