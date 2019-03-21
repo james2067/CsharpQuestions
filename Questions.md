@@ -34,7 +34,33 @@ namespace ExampleNamespace
 
 Doing this will help you control the scope of your classes, and the names of your methods throughout your program.
 
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/
+
 ##    Q: What are value types?
+
+**Main Features of Value Types**
+
+In c# value types are "types" that hold a specific "value".
+
+
+
+**How to Initialize**
+
+You could have a type "int" hold the value of "10".
+
+`int name = 10;`
+
+or if you wanted to user to input the value of "name" you could write this.
+
+`int name = Console.ReadLine();`
+
+or if you want to initialize the "type" to its default value you can use the `new` operator.
+
+`int name = new int();`
+* you can find a list of default values [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table)
+
+
+
 ##    Q: What are reference types?
 ##    Q: What is an automatic property and how is it useful?
 ##    Q: What is the purpose of using statement?
