@@ -186,10 +186,80 @@ class MainClass4
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/public
 
 ##    Q: Can you create a function that can accept a varying number of arguments?
+
+**Yes!**
+
+In c# this can be done very easily by using the `params` keyword.
+
+By using the params keyword, you can specify a method parameter that takes a variable number of arguments.
+
+**Syntax Ex:**
+```
+void PrintReport(string header, params int[] numbers)
+{
+    Console.WriteLine(header);
+    foreach (int number in numbers)
+        Console.WriteLine(number);
+}
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params
+
 ##    Q: How do you sort an array?
+
+Sorting arrays in c# can be done many ways due to the fact you could be sorting them along side a number of things.
+
+If you wanted to sort a one-dimensional array it could be done using this syntax:
+
+`public static void Sort (Array nameofArray);`
+
+Sorting this way uses the IComparable implementation of each element inside the array.
+
+*Exceptions:*
+* If the array is null
+* If the array is multidimensional *(note) you can sort multidimensional arrays, but it must be done differently*
+* If one or more of the array elements do not implement the IComparable interface.
+
+https://docs.microsoft.com/en-us/dotnet/api/system.array.sort?view=netframework-4.7.2#System_Array_Sort_System_Array_
+
 ##    Q: What is a nullable type and what purpose does it serve?
+
+As mentioned previously you cannot assign a value type to null.
+
+However you can use a nullable type to assign null to value type variables. You can declare nullable types using `nullable<t>` where t is a type.
+
+**Syntax Ex:**
+
+`Nullable<int> i = null;`
+
+**What purpose does it serve?**
+
+If you are allowed to pass a value as null, then you can more easily error check it in the future. 
+
+https://www.tutorialsteacher.com/csharp/csharp-nullable-types
+
 ##    Q: What is an enumeration?
+
+An enumeration is a set of named integer *constants*. 
+
+An enumerated type is declared using the `enum` keyword.
+
+**Syntax Ex:**
+```
+enum <enum_name> {
+   enumeration list 
+};
+```
+* enum_name specifies the enumeration type name. (like "Month")
+* enumeration list will be a comma seperated list of identifiers. (like like the months of a year)
+
+https://www.tutorialspoint.com/csharp/csharp_enums.htm
+
 ##    Q: What is inheritance?
+
+
+
+
 ##    Q: Is multiple inheritance supported?
 ##    Q: What is the purpose of as operator
 ##    Q: What is an object?
