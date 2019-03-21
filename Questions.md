@@ -141,14 +141,50 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/is
 
 ##    Q: What are generics and how is using them useful?
 
+**Main Purpose**
 
+Generics allow you to define a class with placeholders for the type of its fields, methods, parameters, etc. Generics replace these placeholders with some specific type at compile time.
 
+A generic class can be defined using a pair of angle brackets like so.
 
+`class MyGenericClass<T>`
 
+Here MyGenericClass is defined with <T>. <> indicates that MyGenericClass is "generic" and its underlying type will be defined later on. For now we consider its type to be "T".
 
-
+https://www.tutorialsteacher.com/csharp/csharp-generics
 
 ##    Q: What is the scope of a public member of a class?
+
+There are a few different access modifiers that c# uses. Public is one of them.
+
+A Public access modifier can be accessed by any other code in the same assembly or another assembly that references it.
+
+Public access is the most permissive access level. There are no restrictions on accessing public members.
+
+**Syntax Ex:**
+```
+class PointTest
+{
+    public int x; 
+    public int y;
+}
+
+class MainClass4
+{
+    static void Main() 
+    {
+        PointTest p = new PointTest();
+        // Direct access to public members:
+        p.x = 10;
+        p.y = 15;
+        Console.WriteLine("x = {0}, y = {1}", p.x, p.y); 
+    }
+}
+// Output: x = 10, y = 15
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/public
+
 ##    Q: Can you create a function that can accept a varying number of arguments?
 ##    Q: How do you sort an array?
 ##    Q: What is a nullable type and what purpose does it serve?
