@@ -411,8 +411,62 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-str
 
 ##    Q: What is the difference between continue and break statements?
 
+**Continue**
 
+The continue statement causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
 
+```
+using System;
+namespace Demo {
+   class Program {
+      static void Main(string[] args) {
+		
+         /* local variable definition */
+         int a = 10;
+         
+         /*  loop execution */
+         while (a > 20) {
+            if (a == 15) {
+               /* skip the iteration */
+               a = a + 1;
+               continue;
+            }
+            Console.WriteLine("value of a: {0}", a);
+            a++;
+         } 
+         Console.ReadLine();
+      }
+   }
+}
+```
+
+**Break**
+
+The break statement terminates the loop and transfers execution to the statement immediately following the loop.
+
+```
+using System;
+namespace Demo {
+   class Program {
+      static void Main(string[] args) {
+         /* local variable definition */
+         int a = 10;
+         
+         /* while loop execution */
+         while (a < 20) {
+            Console.WriteLine("value of a: {0}", a);
+            a++;
+            
+            if (a > 15) {
+               /* terminate the loop using break statement */
+               break;
+            }
+         }
+         Console.ReadLine();
+      }
+   }
+}
+```
 
 ##    Q: What is this and how is it used?
 ##    Q: What is try and catch and when are they used?
