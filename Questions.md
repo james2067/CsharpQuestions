@@ -18,7 +18,8 @@ Now you can use: `Console.WriteLine("Hello World");`
 You can create your own namespaces to use throughout larger projects.
 
 For Ex:
-`namespace ExampleNamespace
+```
+namespace ExampleNamespace
 {
     class ExampleClass
     {
@@ -28,7 +29,8 @@ For Ex:
               "ExampleMethod inside ExampleNamespace");
         }
     }
-}`
+}
+```
 
 Doing this will help you control the scope of your classes, and the names of your methods throughout your program.
 
