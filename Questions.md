@@ -83,7 +83,7 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/refer
 
 ##    Q: What is an automatic property and how is it useful?
 
-An automatic property is created by the compiler. Which automatically creates a private field and populates teh get and set method with the basic code required to read and write the field.
+An automatic property is created by the compiler. Which automatically creates a private field and populates the get and set method with the basic code required to read and write the field.
 
 *Why is it useful?*
 
@@ -96,7 +96,27 @@ Allows us to shorten the syntax required for declaring public properties for pri
 https://csharp.net-tutorials.com/csharp-3.0/automatic-properties/
 
 ##    Q: What is the purpose of using statement?
+
+Provides a convenient syntax that ensures the correct use of IDisposable objects.
+
+When the lifetime of an IDisposable object is limited to a single method, you should declare and instantiate it in the using statement. The using statement ensures that Dispose is called even if an exception occurs within the using block.
+
+Within the using block, the object is read-only and cannot be modified or reassigned.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement
+
 ##    Q: What are dynamic type variables?
+
+A dynamic type escapes type checking at compile time; instead, it resolves type at run time. 
+
+Ex: `dynamic nameHere = 1;`
+
+At compile time this would be read as `object nameHere = 1;` but at runtime the "dynamic" type resolves to `int nameHere =1;`
+
+*Note:* A dynamic type changes its type at runtime based on the value of the expression to the right of the "=" operator.
+
+https://www.tutorialsteacher.com/csharp/csharp-dynamic-type
+
 ##    Q: What is the purpose of the is operator?
 ##    Q: What are generics and how is using them useful?
 ##    Q: What is the scope of a public member of a class?
