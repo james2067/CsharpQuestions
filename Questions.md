@@ -118,7 +118,36 @@ At compile time this would be read as `object nameHere = 1;` but at runtime the 
 https://www.tutorialsteacher.com/csharp/csharp-dynamic-type
 
 ##    Q: What is the purpose of the is operator?
+
+**Main Purpose**
+
+The is keyword evaluates type compatibility at runtime. It determines whether an object instance or the result of an expression can be converted to a specified type.
+
+**Synstax Ex:**
+
+```
+if (obj is Person) {
+   // Do something if obj is a Person.
+}
+```
+
+The `is` statement is true if:
+* obj is an instance of the same type as Person
+* obj is an instance of a type that derives from Person. 
+* obj has a compile-time type that is a base class of Person.
+* obj is an instance of a type that implements the Person interface.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/is
+
 ##    Q: What are generics and how is using them useful?
+
+
+
+
+
+
+
+
 ##    Q: What is the scope of a public member of a class?
 ##    Q: Can you create a function that can accept a varying number of arguments?
 ##    Q: How do you sort an array?
