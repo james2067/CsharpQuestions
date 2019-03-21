@@ -38,11 +38,19 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/
 
 ##    Q: What are value types?
 
-**Main Features of Value Types**
+**Main Feature of Value Types**
 
 In c# value types are "types" that hold a specific "value".
 
+*Note:* Value types cannot be set to null by default.
 
+**List of Common Value Types**
+* bool
+* char
+* double
+* float
+* Int
+* struct
 
 **How to Initialize**
 
@@ -59,7 +67,7 @@ or if you want to initialize the "type" to its default value you can use the `ne
 `int name = new int();`
 * you can find a list of default values [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table)
 
-
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types
 
 ##    Q: What are reference types?
 ##    Q: What is an automatic property and how is it useful?
