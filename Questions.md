@@ -257,14 +257,163 @@ https://www.tutorialspoint.com/csharp/csharp_enums.htm
 
 ##    Q: What is inheritance?
 
+Inheritance is a feature of object-oriented programming languages that allows you to define a base class that provides specific functionality (data and behavior) and to define derived classes that either inherit or override that functionality.
 
+Basically this allows your classes to inherit the members of a parent class, and the inheritance is transitive. So even though your classes can only inherit from one other class. If class D inherits from class C which inherits from class B then class D will also have access to the members of class B.
 
+https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance
 
 ##    Q: Is multiple inheritance supported?
+
+**NO!**
+
+As mentioned in the previous question. A class can only inherit from one other class. 
+
+However inheritance is transitive. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance
+
 ##    Q: What is the purpose of as operator
+
+**Main Purpose**
+
+In c# the `as` operator is used to perform certain types of conversions between compatible reference types or nullable types.
+
+**Syntax Ex:**
+```
+class ClassA { }
+class ClassB { }
+
+class MainClass
+{
+    static void Main()
+    {
+        object[] objArray = new object[6];
+        objArray[0] = new ClassA();
+        objArray[1] = new ClassB();
+        objArray[2] = "hello";
+        objArray[3] = 123;
+        objArray[4] = 123.4;
+        objArray[5] = null;
+
+        for (int i = 0; i < objArray.Length; ++i)
+        {
+            string s = objArray[i] as string;
+            Console.Write("{0}:", i);
+            if (s != null)
+            {
+                Console.WriteLine("'" + s + "'");
+            }
+            else
+            {
+                Console.WriteLine("not a string");
+            }
+        }
+    }
+}
+/*
+Output:
+0:not a string
+1:not a string
+2:'hello'
+3:not a string
+4:not a string
+5:not a string
+*/
+```
+
+This syntax shows the `as` operator comparing each element of the array to a string. If the element is a string it prints out the contents of said string. You can tell it worked because only the 3rd element is printed.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/as
+
 ##    Q: What is an object?
+
+An object is basically a block of memory that has been allocated and configured according to the blueprint.
+
+C# is an object-oriented language, thus you can expect to be using many objects throughout your program.
+
+**Syntax Ex:**
+```
+public struct Person
+{
+    public string Name;
+    public int Age;
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+
+public class Application
+{
+    static void Main()
+    {
+        // Create  struct instance and initialize by using "new".
+        // Memory is allocated on thread stack.
+        Person p1 = new Person("Alex", 9);
+        Console.WriteLine("p1 Name = {0} Age = {1}", p1.Name, p1.Age);
+
+        // Create  new struct object. Note that  struct can be initialized
+        // without using "new".
+        Person p2 = p1;
+
+        // Assign values to p2 members.
+        p2.Name = "Spencer";
+        p2.Age = 7;
+        Console.WriteLine("p2 Name = {0} Age = {1}", p2.Name, p2.Age);
+
+        // p1 values remain unchanged because p2 is  copy.
+        Console.WriteLine("p1 Name = {0} Age = {1}", p1.Name, p1.Age);
+
+        // Keep the console open in debug mode.
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+}
+/*
+  Output:
+    p1 Name = Alex Age = 9
+    p2 Name = Spencer Age = 7
+    p1 Name = Alex Age = 9
+*/
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/objects
+
 ##    Q: What is the difference between a struct and a class?
+
+A class or struct declaration is like a blueprint that is used to create instances or objects at run time.
+
+If you define a class or struct called `Person`, `Person` is the name of the type. If you declare and initialize a variable `p` of type `Person`, `p` is said to be an object or instance of `Person`. Multiple instances of the same `Person` type can be created, and each instance can have different values in its properties and fields.
+
+**Struct**
+
+A struct is a value type. 
+
+When a struct is created, the variable to which the struct is assigned holds the struct's actual data. 
+
+When the struct is assigned to a new variable, it is copied. The new variable and the original variable therefore contain two separate copies of the same data. Changes made to one copy do not affect the other copy.
+
+Structs are best suited for small data structures that contain primarily data that is not intended to be modified after the struct is created.
+
+**Class**
+
+A class is a reference type. 
+
+When an object of the class is created, the variable to which the object is assigned holds only a reference to that memory. 
+
+When the object reference is assigned to a new variable, the new variable refers to the original object. Changes made through one variable are reflected in the other variable because they both refer to the same data.
+
+In general, classes are used to model more complex behavior, or data that is intended to be modified after a class object is created. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/
+
 ##    Q: What is the difference between continue and break statements?
+
+
+
+
 ##    Q: What is this and how is it used?
 ##    Q: What is try and catch and when are they used?
 ##    Q: How is exception handling done?
