@@ -1,11 +1,11 @@
 ##    Q: What is a namespace?
-      Namespaces are used primarily in two ways.
-      **Organizing classes**
-      Look at the code: ```System.Console.WriteLine("Hello world");```
-      System is the namespace. Console is the class inside of that namespace.
-      You can use the "using" keyword at the top of your program to eliminate some repetition here.
-      For Ex: ```Using System;```
-      Now you can use: ```Console.WriteLine("Hello World");```
+Namespaces are used primarily in two ways.
+**Organizing classes**
+Look at the code: `System.Console.WriteLine("Hello world");`
+System is the namespace. Console is the class inside of that namespace.
+You can use the "using" keyword at the top of your program to eliminate some repetition here.
+For Ex: `Using System;`
+Now you can use: `Console.WriteLine("Hello World");`
 ##    Q: What are value types?
 ##    Q: What are reference types?
 ##    Q: What is an automatic property and how is it useful?
