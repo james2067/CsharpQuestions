@@ -79,16 +79,22 @@ Reference types are different from value types because a reference type does not
 * Delegates
 * All arrays, even if their elements are "Value Types"
 
-**Example of passing a value by reference**
-```
-
-```
-
-
-
-
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types
 
 ##    Q: What is an automatic property and how is it useful?
+
+An automatic property is created by the compiler. Which automatically creates a private field and populates teh get and set method with the basic code required to read and write the field.
+
+*Why is it useful?*
+
+Allows us to shorten the syntax required for declaring public properties for private fields.
+
+**Syntax Example**
+
+`public string Name { get; set; }`
+
+https://csharp.net-tutorials.com/csharp-3.0/automatic-properties/
+
 ##    Q: What is the purpose of using statement?
 ##    Q: What are dynamic type variables?
 ##    Q: What is the purpose of the is operator?
