@@ -13,6 +13,25 @@ For Ex: `Using System;`
 
 Now you can use: `Console.WriteLine("Hello World");`
 
+**Custom namespaces**
+
+You can create your own namespaces to use throughout larger projects.
+
+For Ex:
+`namespace ExampleNamespace
+{
+    class ExampleClass
+    {
+        public void ExampleMethod()
+        {
+            System.Console.WriteLine(
+              "ExampleMethod inside ExampleNamespace");
+        }
+    }
+}`
+
+Doing this will help you control the scope of your classes, and the names of your methods throughout your program.
+
 ##    Q: What are value types?
 ##    Q: What are reference types?
 ##    Q: What is an automatic property and how is it useful?
