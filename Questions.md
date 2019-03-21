@@ -70,6 +70,24 @@ or if you want to initialize the "type" to its default value you can use the `ne
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types
 
 ##    Q: What are reference types?
+
+Reference types are different from value types because a reference type does not hold the "value". Instead it holds a pointer to location in memory where that "value" is stored.
+
+**List of Reference Types**
+* String
+* Class
+* Delegates
+* All arrays, even if their elements are "Value Types"
+
+**Example of passing a value by reference**
+```
+
+```
+
+
+
+
+
 ##    Q: What is an automatic property and how is it useful?
 ##    Q: What is the purpose of using statement?
 ##    Q: What are dynamic type variables?
