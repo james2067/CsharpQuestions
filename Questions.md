@@ -583,14 +583,190 @@ https://www.geeksforgeeks.org/c-sharp-constructors/
 
 ##    Q: When can var be used to declare a variable and how is the type for the variable determined?
 
+`var` is an implicit type.
 
+This means that the compilier will determine the type itself, and it is just as strongly typed as if you had declared the type yourself.
 
+**Ex:**
+You write `var i = 10;`
+The compiler will read `int i = 10;`
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/var
 
 ##    Q: What is an abstract class?
+
+**Abstraction**
+
+The abstraction modifier can be used with classes, methods, properties, indexers, and events.
+
+It is used to indicate that there are missing or incomplete implementations.
+
+**Abstract Classes**
+
+Use the abstract modifier in a class declaration to indicate that a class is intended only to be a base class of other classes.
+
+This allows for much neater code.
+
+Members marked as abstract, or included in an abstract class, must be implemented by classes that derive from the abstract class.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract
+
 ##    Q: What is an interface?
+
+An interface contains definitions for a group of related functionalities that a class or a struct can implement.
+
+By using interfaces, you can, for example, include behavior from multiple sources in a class. That capability is important in C# because the language doesn't support multiple inheritance of classes.
+
+In addition, you must use an interface if you want to simulate inheritance for structs, because they can't actually inherit from another struct or class.
+
+**Properties**
+* An interface is like an abstract base class with only abstract members. Any class or struct that implements the interface must implement all its members.
+* An interface can't be instantiated directly. Its members are implemented by any class or struct that implements the interface.
+Interfaces can contain events, indexers, methods, and properties.
+* Interfaces can contain events, indexers, methods, and properties.
+* Interfaces contain no implementation of methods. **IMPORTANT**
+* A class or struct can implement multiple interfaces. A class can inherit a base class and also implement one or more interfaces.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/
+
 ##    Q: What is a method?
+
+A method is a code block that contains a series of statements. A program causes the statements to be executed by calling the method and specifying any required method arguments.
+
+In C a method would be called a function.
+
+Methods are great for shortening your code. 
+
+**Syntax Ex:**
+```
+class TestMotorcycle : Motorcycle
+{
+
+    public override double GetTopSpeed()
+    {
+        return 108.4;
+    }
+
+    static void Main()
+    {
+        
+        TestMotorcycle moto = new TestMotorcycle();
+
+        moto.StartEngine();
+        moto.AddGas(15);
+        moto.Drive(5, 20);
+        double speed = moto.GetTopSpeed();
+        Console.WriteLine("My top speed is {0}", speed);            
+    }
+}
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods
+
 ##    Q: What is a property?
+
+**Definition**
+
+A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field.
+
+**Overview**
+
+* Properties enable a class to expose a public way of getting and setting values, while hiding implementation or verification code.
+* A get property accessor is used to return the property value, and a set property accessor is used to assign a new value. These accessors can have different access levels. For more information, see Restricting Accessor Accessibility.
+* The value keyword is used to define the value being assigned by the set accessor.
+* Properties can be read-write (they have both a get and a set accessor), read-only (they have a get accessor but no set accessor), or write-only (they have a set accessor, but no get accessor). Write-only properties are rare and are most commonly used to restrict access to sensitive data.
+* Simple properties that require no custom accessor code can be implemented either as expression body definitions or as auto-implemented properties.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+
 ##    Q: What is an access specifier?
+
+All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
+
 ##    Q: What access specifiers are supported and what do they mean?
+
+* Public
+	* Can be accessed by any other code in same assembly or another assembly that references it.
+* Private
+	* Can be accessed only by code in the same class or struct.
+* Protected
+	* Can be accessed only by code in the same class, or in a class that is derived from that class.
+* Internal
+	* Can be accessed by any code in the same assembly, but not from another assembly.
+* Protected Internal
+	* Can be accessed by any code in the assembly in which it is declared, or from within a derived class in another assembly.
+* Private Protected
+	* Can be accessed only within its declaring assembly, by code in the same class or in a type that is derived from that class.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
+
 ##    Q: What is a collection?
+
+Collections are another way of creating and managing groups of related objects.
+
+They provide a flexible way to work with groups of objects. Unlike arrays, the group of objects you work with can shrink and grow dynamically as the needs of the application change. 
+
+A collection is a class, so you must declare an instance of the class before you can add elements to that collection.
+
+**Syntax Ex:**
+```
+// Create a list of strings.  
+var salmons = new List<string>();  
+salmons.Add("chinook");  
+salmons.Add("coho");  
+salmons.Add("pink");  
+salmons.Add("sockeye");  
+  
+// Iterate through the list.  
+foreach (var salmon in salmons)  
+{  
+    Console.Write(salmon + " ");  
+}  
+// Output: chinook coho pink sockeye  
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections
+
 ##    Q: What is a Hash Table?
+
+Represents a collection of key/value pairs that are organized based on the hash code of the key.
+
+There are many different properties and methods that are usable from the `hashtable` class. [here](https://www.tutorialspoint.com/csharp/csharp_hashtable.htm)
+
+**Syntax Ex:**
+```
+using System;
+using System.Collections;
+
+namespace CollectionsApplication {
+   class Program {
+      static void Main(string[] args) {
+         Hashtable ht = new Hashtable();
+         
+         ht.Add("001", "Zara Ali");
+         ht.Add("002", "Abida Rehman");
+         ht.Add("003", "Joe Holzner");
+         ht.Add("004", "Mausam Benazir Nur");
+         ht.Add("005", "M. Amlan");
+         ht.Add("006", "M. Arif");
+         ht.Add("007", "Ritesh Saikia");
+         
+         if (ht.ContainsValue("Nuha Ali")) {
+            Console.WriteLine("This student name is already in the list");
+         } else {
+            ht.Add("008", "Nuha Ali");
+         }
+         
+         // Get a collection of the keys.
+         ICollection key = ht.Keys;
+         
+         foreach (string k in key) {
+            Console.WriteLine(k + ": " + ht[k]);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+```
